@@ -3,6 +3,7 @@ from flask import Flask
 app = Flask(__name__)
 world = '🗺️'
 
+
 def hello(word=world):
     return "Hello " + word
 
