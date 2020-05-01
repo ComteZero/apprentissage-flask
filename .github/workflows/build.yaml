@@ -5,9 +5,7 @@ name: build
 
 on:
   push:
-    branches: [ develop ]
-    tags:
-      - '1.*'
+    branches: [ develop, feature/* ]
   pull_request:
     branches: [ develop ]
 
