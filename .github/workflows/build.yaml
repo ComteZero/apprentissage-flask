@@ -5,7 +5,7 @@ name: build
 
 on:
   push:
-    branches: [ develop, feature/* ]
+    branches: [ develop ]
     tags:
       - '1.*'
   pull_request:
@@ -36,13 +36,3 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-    - name: Docker login
-      run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-    - name: Docker build
-      run: docker build -t apprentissage-flask .
-    - name: Docker tags
-      run: |
-        docker tag apprentissage-flask ${{ secrets.DOCKER_USERNAME }}/apprentissage-flask:${{ github.sha }}
-    - name: Docker publish
-      run: |
-        docker push ${{ secrets.DOCKER_USERNAME }}/apprentissage-flask:${{ github.sha }}
