@@ -8,7 +8,8 @@ flake:
 	flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 
 test:
-	pytest
+	mkdir -p dist
+	pytest --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html | tee dist/pytest.log
 
 freeze:
 	pip freeze | grep -v "pkg-resources" > requirements.txt
