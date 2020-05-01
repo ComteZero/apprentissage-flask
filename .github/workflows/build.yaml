@@ -44,5 +44,5 @@ jobs:
     - name: Upload test results
       uses: actions/upload-artifact@v1
       with:
-        name: pytest.log
-        path: dist/pytest.log
+        name: test-results-${{ matrix.python-version }}
+        path: junit/${{ matrix.python-version }}/test-results.xml
