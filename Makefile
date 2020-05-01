@@ -9,7 +9,7 @@ flake:
 
 test:
 	mkdir -p dist
-	pytest --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html | tee dist/pytest.log
+	pytest tests/ --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html | tee dist/pytest.log
 
 freeze:
 	pip freeze | grep -v "pkg-resources" > requirements.txt
