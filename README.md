@@ -25,6 +25,12 @@ high-availability
 
 ## CI/CD
 
+### environment variables available in github actions
+
+<https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables#default-environment-variables>
+
+### docker steps
+
 <https://www.basefactor.com/github-actions-docker>
 
 <https://medium.com/better-programming/github-actions-for-docker-eaf22bbcc879>
